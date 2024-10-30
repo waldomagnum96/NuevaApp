@@ -1,0 +1,67 @@
+colorapi{
+    background-color: rgba(0, 0, 0, 0.623);
+    padding: 20px;
+    color: white;
+    max-width: 400px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+ion-content{
+    --background: url(/assets/img/fondo2.png) no-repeat center center / cover
+}
+
+.post{
+    margin-bottom: 30px;
+    margin-left: 60px;
+    
+}
+
+.color-header{
+    --background: #000000d5; /* Color negro */
+  --color: white; /* Texto en blanco */
+}
+
+
+
+::ng-deep .custom-card {
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Fondo negro transparente */
+    color: white !important; /* Cambiar color de texto a blanco */
+  }
+  
+  ::ng-deep .custom-card ion-title,
+  ::ng-deep .custom-card h4,
+  ::ng-deep .custom-card p {
+    color: white !important; /* Asegura que los textos sean blancos */
+  }
+  
+  ::ng-deep .custom-card ion-button {
+    --background: transparent !important; /* Fondo transparente para botón */
+    --color: white !important; /* Texto del botón en blanco */
+  }
+  
+  ::ng-deep .custom-card ion-icon {
+    color: white !important; /* Íconos en blanco */
+  }
+
+  ::ng-deep .custom-card {
+    --ion-background-color: rgba(0, 0, 0, 0.8) !important; /* Fondo negro transparente */
+    --ion-card-background-color: rgba(0, 0, 0, 0.8) !important; /* Asegura que el fondo de la tarjeta también sea negro */
+  }
+  
+  ::ng-deep .custom-card ion-item {
+    --background: transparent !important; /* Fondo transparente en cada ion-item */
+  }
+  
+  ::ng-deep .custom-card ion-label {
+    color: white !important; /* Color del texto dentro de ion-label en blanco */
+  }
+  
+  ::ng-deep .custom-card ion-button {
+    --background: transparent !important; /* Botón con fondo transparente */
+    --color: white !important; /* Color blanco para el botón */
+  }
+  
+  ::ng-deep .custom-card ion-icon {
+    color: white !important; /* Icono blanco */
+  }

@@ -1,0 +1,40 @@
+ion-content{
+    --background: url(/assets/img/fondo2.png) no-repeat center center / cover
+}
+
+.inicio-cont{
+    display: flex; // 
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.inicio-fondo{
+    background-color: rgba(0, 0, 0, 0.915);
+    padding: 20px;
+    color: white;
+    max-width: 300px;
+}
+
+.custom-input{
+    margin-bottom: 10px;
+}
+
+.img1{
+    max-height: 200px;
+    max-width: 200px;
+    object-fit: cover;
+    
+}
+
+.inicio-img{
+    display: flex; // 
+    justify-content: center;
+    margin-top: 30px;
+    
+}
+
+.inicio-titulo{
+    font-family: "Oswald";
+    font-size: 25px;
+}

@@ -1,0 +1,180 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="color-header">
+    <div class="alinear-botones">
+      <ion-title>
+        Bienvenido/a {{login.usuario}}
+      </ion-title>
+      <ion-button class="boton-inicio" fill="clear" [routerLink] ="['/login']">Inicio</ion-button>
+    </div>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <img class="raccon-font" src="../../../assets/img/racconcityfont.png" alt="racconcity">
+  </div>
+
+  <div class="audio-container">
+    <!-- Contenedor para el botón de audio -->
+    <ion-button (click)="toggleAudio()" expand="full" fill="solid" class="audio-button">
+      <ion-icon *ngIf="isPlaying" name="volume-mute"></ion-icon>
+      <ion-icon *ngIf="!isPlaying" name="musical-notes"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Aquí va el resto del contenido de la página -->
+
+  <!-- Audio de fondo (no visible) -->
+  <audio #backgroundAudio>
+    <source src="../../../assets/audio/08 - The Front Hall.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+
+
+
+
+
+
+  <h3 class="juegos-titulo">Juegos</h3>
+  <div class="slide-in-blurred-left">
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        
+        <mat-card-title class="titulo-color">Resident Evil 0</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image class="imgre0"  src="../../../assets/img/re00.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          ¿Cuando se fundó? ¿Por quién? ¿Como se creó el T-Virus? Para descubrir la verdad, debemos indagar en lo que ocurrió antes,
+          antes del episodio de la mansión...
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <ion-button fill="clear" [routerLink] ="['/residentevilzero']">Información</ion-button>
+      </mat-card-actions>
+    </mat-card> 
+  
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        
+        <mat-card-title class="titulo-color">Resident Evil Remake</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image class="imgre0"  src="../../../assets/img/re1remake.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          El Equipo Alpha está sobrevolando la zona boscosa situada al noroeste de Raccoon City. Vamos en busca del helicóptero de nuestros compañeros del Equipo Bravo, con los cuales hemos perdido comunicación.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <ion-button fill="clear">Información</ion-button>
+      </mat-card-actions>
+    </mat-card> 
+  
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        
+        <mat-card-title class="titulo-color">Resident Evil 2</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image class="imgre0"  src="../../../assets/img/re2.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Nadie sabía lo que estaba pasando y el Departamento de Policía parecía impotente ante tales sucesos.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <ion-button fill="clear">Información</ion-button>
+      </mat-card-actions>
+    </mat-card> 
+  
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        
+        <mat-card-title class="titulo-color">Resident Evil 3</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image class="imgre0"  src="../../../assets/img/re3.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Han pasado casi dos meses. Septiembre llega a Raccoon City y la gente empieza a olvidar el extraño incidente que ocurrió en las montañas Arkleys.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <ion-button fill="clear">Información</ion-button>
+      </mat-card-actions>
+    </mat-card> 
+
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        
+        <mat-card-title class="titulo-color">Resident Evil 4</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image class="imgre0"  src="../../../assets/img/re4.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          1998... nunca lo olvidaré. Fue el año de los asesinatos en las montañas Arklay.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <ion-button fill="clear">Información</ion-button>
+      </mat-card-actions>
+    </mat-card> 
+
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        
+        <mat-card-title class="titulo-color">Resident Evil Code Veronica</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image class="imgre0"  src="../../../assets/img/codevero.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Raccoon City, una ciudad del medio oeste, ha sido totalmente afectada por el brote de T-Virus, un incidente instigado por la compañía internacional Umbrella Corporation.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <ion-button fill="clear">Información</ion-button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        
+        <mat-card-title class="titulo-color">Resident Evil Outbreak</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image class="imgre0"  src="../../../assets/img/outbreak.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Tú eres uno de los supervivientes y deberás escapar de ese horror antes de que el virus te contagie también a ti.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <ion-button fill="clear">Información</ion-button>
+      </mat-card-actions>
+    </mat-card> 
+
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        
+        <mat-card-title class="titulo-color">Resident Evil Outbreak File 2</mat-card-title>
+        
+      </mat-card-header>
+      <img mat-card-image class="imgre0"  src="../../../assets/img/out2.png" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Empezó hace tan sólo unas horas...En estos momentos la epidemia está fuera de control y el virus se propaga libremente por las calles de Raccoon City.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <ion-button fill="clear">Información</ion-button>
+      </mat-card-actions>
+    </mat-card> 
+  </div>
+</ion-content>
+

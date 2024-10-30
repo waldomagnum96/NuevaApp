@@ -1,0 +1,17 @@
+<ion-content [fullscreen]="true">
+  <div class="inicio-img"><img class="img1" src="../../../assets/img/umb.png" alt="umbrella"></div>
+  
+  <div class="inicio-cont">
+   
+    <div class="inicio-fondo">
+      <h3 class="inicio-titulo">Restablecer contraseña</h3>
+      <ion-input class="custom-input" label="Usuario" labelPlacement="floating" [(ngModel)]="dato.nombreUsuario"></ion-input>
+    
+      <ion-input class="custom-input" label="Nueva Contraseña" labelPlacement="floating" type="password" [(ngModel)]="dato.nuevaCon"></ion-input>
+    
+      <ion-button class="boton-resta-resta" fill="clear" shape (click) ="restablecer()">Restablecer</ion-button>
+      <ion-button fill="clear" [routerLink] ="['/login']">Volver al inicio</ion-button>
+    </div>
+  </div>
+        
+</ion-content>

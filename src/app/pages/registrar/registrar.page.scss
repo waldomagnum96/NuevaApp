@@ -1,0 +1,29 @@
+ion-content{
+    --background: url(/assets/img/fondo2.png) no-repeat center center / cover
+}
+
+
+.registrarcss{
+    background-color: rgba(0, 0, 0, 0.915);
+    padding: 20px;
+    color: white;
+    max-width: 350px;
+    margin-top: 30px;
+    margin-left: 32px;
+}
+
+.imgadd1{
+    max-height: 370px;
+    max-width: 370px;
+    object-fit: cover;
+    margin-left: 20px;
+}
+
+.imgadd{
+    justify-content: center;
+}
+
+.color-header{
+    --background: #000000d5; /* Color negro */
+  --color: white; /* Texto en blanco */
+}

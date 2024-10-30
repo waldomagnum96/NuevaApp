@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="color-header">
+    <ion-title>Agregar Noticia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding-vertical">
+    
+     <div class="imgadd">
+      <img class="imgadd1" src="../../../assets/img/residentadd.png" alt="readd">
+     </div>
+
+      <div class="registrarcss">
+        
+          <ion-label position="floating">Titulo</ion-label>
+          <ion-input type="text" [(ngModel)]="tituloNoticia"></ion-input>
+        
+
+        
+          <ion-label position="floating">Texto Noticia</ion-label>
+          <ion-input type="text" [(ngModel)]="textoNoticia"></ion-input>
+        
+     
+        <ion-button fill="clear" shape="black" (click)="guardar()">Guardar Noticia</ion-button>
+        <ion-button class="boton-ir-home-reg" fill="clear" [routerLink] ="['/tabsgeneral/home']">Ir a home</ion-button>
+      </div>
+        
+    
+  </div>
+</ion-content>

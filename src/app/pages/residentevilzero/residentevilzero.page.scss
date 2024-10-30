@@ -1,0 +1,35 @@
+ion-content{
+    --background: url(/assets/img/fondo2.png) no-repeat center center / cover
+}
+
+.foto-principal{
+    height: 350px;
+}
+
+.boton-principal{
+    color: black;
+    background-color: black;
+}
+
+.boton1{
+    width: 190px;
+    height: 80px;
+    border: 2px solid;
+}
+
+.boton2{
+    width: 385px;
+    height: 80px;
+    border: 2px solid;
+}
+
+.fondo{
+    background-color: black;
+    max-width: 400px;
+    margin-left: 12px;
+}
+
+.color-header{
+    --background: #000000d5; /* Color negro */
+  --color: white; /* Texto en blanco */
+}

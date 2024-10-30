@@ -1,0 +1,54 @@
+ion-content{
+    --background: url(/assets/img/fondo2.png) no-repeat center center / cover
+}
+
+.color-header{
+    --background: #000000d5; /* Color negro */
+  --color: white; /* Texto en blanco */
+}
+
+
+.custom-list-background {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo negro transparente del contenedor */
+}
+
+::ng-deep .custom-list-background ion-item {
+  --background: rgba(0, 0, 0, 0.7); /* Fondo negro transparente en cada ion-item */
+  --ion-background-color: rgba(0, 0, 0, 0.7); /* Aseguramos que el fondo del ion-item sea negro transparente */
+  --ion-item-background: rgba(0, 0, 0, 0.7); /* Más fondo para otros niveles */
+  color: white !important; /* Aseguramos el color blanco del texto */
+}
+
+::ng-deep .custom-list-background ion-label h5,
+::ng-deep .custom-list-background ion-label p {
+  color: white !important; /* Texto blanco */
+}
+
+::ng-deep .custom-list-background ion-item-option {
+  --background: rgba(0, 0, 0, 0.7); /* Fondo negro transparente para las opciones */
+  --ion-background-color: rgba(0, 0, 0, 0.7); /* Fondo transparente dentro del item-option */
+  color: white !important; /* Texto blanco en las opciones */
+}
+
+::ng-deep .custom-list-background ion-icon {
+  color: white !important; /* Íconos blancos */
+}
+
+::ng-deep .custom-list-background ion-item,
+::ng-deep .custom-list-background ion-item-options {
+  opacity: 0.9; /* Ajustar la opacidad general para los elementos */
+}
+
+.alinear-botones{
+  display: flex;
+  justify-content: space-between;
+}
+
+.icono{
+  height: 30px;
+  width: 30px;
+}
+
+.iconomas{
+  background-color: black;
+}

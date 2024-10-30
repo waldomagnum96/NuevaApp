@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="color-header">
+    <ion-title>
+      Foro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div>
+    <img src="../../../assets/img/racconcityfont.png" alt="rccf">
+  </div>
+  <br>
+  <div class="colorapi">
+    
+      <ion-title class="post">Escribe algo aqui</ion-title>
+    
+    
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input></ion-input>
+   
+    
+      <ion-label position="floating">Cuerpo</ion-label>
+      <ion-textarea></ion-textarea>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-button shape="round" expand="block">Limpiar</ion-button></ion-col>
+        <ion-col><ion-button shape="round" expand="block">Guardar</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+   
+  <div>
+    <ion-card class="custom-card">
+      <ion-list-header>
+        <ion-title>Post Recientes</ion-title>
+      </ion-list-header>
+      <ion-list>
+        <ion-item *ngIf="!posts" class="ion-padding custom-skeleton">
+          <ion-label>
+            <ion-skeleton-text animated></ion-skeleton-text>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </ion-label>
+        </ion-item>
+        <ion-item *ngFor="let post of posts">
+          <ion-label><h4>{{post.title}}</h4><p>{{post.body}}</p></ion-label>
+          <ion-button>
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+  </div>
+  
+</ion-content>
