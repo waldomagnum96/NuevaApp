@@ -11,97 +11,49 @@ import { AutheticationService } from 'src/app/services/authetication.service';
 })
 export class LoginPage implements OnInit {
   // relacionado con ngmodel para obtener inputs del login (validar)
-  ionicForm: FormGroup;
+  login:any={
+    usuario:"",
+    password:""
+  }
+  //definir una variable para indicar el campo vacío
+  field:string="";
 
-  // email:any
-  // password:any
-  // contact:any
-
-  constructor(private toastController: ToastController, private alertController: AlertController, private loadingController: LoadingController, private authService: AutheticationService, private router: Router, public formBuilder: FormBuilder) { }
+  constructor(public router:Router, public toastController:ToastController) { }
 
   ngOnInit() {
-    this.ionicForm = this.formBuilder.group({
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$'),
-        ],
-      ],
-      password: ['', [
-        // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}'),
-        Validators.required,
-      ]
-      ],
-    });
   }
 
-  async login() {
-    const loading = await this.loadingController.create();
-    await loading.present();
-    // console.log(this.email + this.password);
-    if (this.ionicForm.valid) {
-
-      //  await  loading.dismiss();
-      const user = await this.authService.LoginUser(this.ionicForm.value.email, this.ionicForm.value.password).catch((err: undefined) => {
-        this.presentToast(err)
-        console.log(err);
-        loading.dismiss();
-      })
-
-      if (user) {
-        loading.dismiss();
-        this.router.navigate(
-          ['/tabsgeneral/home'])
+  ingresar(){
+    if(this.validateModel(this.login)){
+      let navigationExtras : NavigationExtras={
+        state:{login:this.login}
       }
-    } else {
-      return console.log('Please provide all the required values!');
+      this.presentToast("top","Bienvenido/a");
+      this.router.navigate(['/tabsgeneral/home'],navigationExtras);
+    }else{
+      this.presentToast("middle","Campo incompleto - Falta: "+ this.field, 4000);
     }
-
+    
   }
-  get errorControl() {
-    return this.ionicForm.controls;
+  //validar los campos de entrada (que se ingrese algo) mediante su modelo con validateModel
+  validateModel(model:any){
+    //recorre el modelo login revisando las entradas de Object
+    for(var [key,value] of Object.entries(model)){
+      // si el campo es vacío ("") se retorna falso y se indica el nombre del campo que falta
+      if (value == ""){
+        this.field = key;
+        return false;
+      }
+    }
+    return true;
   }
-
-  async presentToast(message: undefined) {
-    console.log(message);
-
+  async presentToast(position: 'top' | 'middle' | 'bottom', mensaje:string, duracion?:number) {
     const toast = await this.toastController.create({
-      message: message,
-      duration: 1500,
-      position: 'top',
+      message: mensaje,
+      duration: duracion?duracion:2500,
+      position: position,
     });
 
     await toast.present();
-  }
-
-
-
-
-
-
-  
-  async performFirebaseOperation() {
-    // Muestra el loading
-    const loading = await this.loadingController.create({
-      message: 'Cargando...',
-      spinner: 'circles'
-    });
-    await loading.present();
-
-    try {
-      // Realiza la operación asincrónica con Firebase
-      await this.firebaseOperation(); // tu función de Firebase
-    } catch (error) {
-      console.error("Error al realizar la operación:", error);
-    } finally {
-      // Oculta el loading independientemente del resultado
-      await loading.dismiss();
-    }
-  }
-
-  async firebaseOperation() {
-    // Aquí iría tu código de Firebase (e.g., consultas, guardado de datos)
-    return new Promise(resolve => setTimeout(resolve, 2000)); // simulación de operación
   }
 }

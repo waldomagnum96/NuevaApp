@@ -1,47 +1,20 @@
 
+
 <ion-content [fullscreen]="true">
   <div class="inicio-img"><img class="img1" src="../../../assets/img/umb.png" alt="umbrella"></div>
   
-  <form [formGroup]="ionicForm"  novalidate>
-    <div class="ion-padding">
-
-      <ion-item>
-        <ion-input placeholder="username" formControlName="email" class="input" />
-        <ion-icon name="person-outline"></ion-icon>
-        
-      </ion-item>
+  <div class="inicio-cont">
+   
+    <div class="inicio-fondo">
+      <h3 class="inicio-titulo">Inicio</h3>
+      <ion-input class="custom-input" label="Usuario" labelPlacement="floating" [(ngModel)]="login.usuario"></ion-input>
     
-      <div style="padding-top: -26px;padding-bottom: 16px;" *ngIf="this.ionicForm.controls?.['email'].touched && this.ionicForm.controls?.['email'].invalid">
-          <ion-text *ngIf="errorControl.email.errors?.required" class="errorInput" color="danger">Email is required.</ion-text>
-          <ion-text *ngIf="errorControl.email.errors?.pattern" class="errorInput" color="danger">Please provide valid email.</ion-text>
-      </div>
-      <ion-item>
-        <ion-input type="password" placeholder="password" formControlName="password" class="input" />
-        <ion-icon name="lock-closed-outline"></ion-icon>
-      </ion-item>
-      <div style="padding-top: -26px;padding-bottom: 16px;" *ngIf="this.ionicForm.controls?.['password'].touched && this.ionicForm.controls?.['password'].invalid">
-          <ion-text *ngIf="errorControl.password.errors?.required" class="errorInput" color="danger">password is required.</ion-text>
-          <ion-text *ngIf="errorControl.password.errors?.pattern" class="errorInput"  color="danger">Password Must contain at least one character</ion-text>
-      </div>
+      <ion-input class="custom-input" label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="login.password"></ion-input>
     
-      <div class="forgotpassword">
-        <a [routerLink]="['/restablecer']" style="color: #FFC33F">Forgot Password?</a>
-      </div>
-      <ion-button
-            expand="block"
-            shape="round"
-            id="loginButton"
-            (click)="login()"
-          >
-            Ingresar
-          </ion-button>
-
+      <ion-button class="boton-ingresar" fill="clear" shape (click) ="ingresar()">Ingresar</ion-button>
+      <ion-button class="boton-registrarse" fill="clear" [routerLink] ="['/registrarse']">Registrarse</ion-button>  
+      <ion-button class="boton-recuperar" fill="clear" [routerLink] ="['/restablecer']">Recuperar contraseña</ion-button>
     </div>
-    <div class="signupLink">
-      <p class="p">New memember? <a [routerLink]="['/registrarse']" style="color: #FFC33F">SignUp now</a></p>
-    </div>
-
-    
-  </form>
+  </div>
         
 </ion-content>
